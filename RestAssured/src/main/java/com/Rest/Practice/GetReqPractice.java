@@ -12,23 +12,23 @@ import static io.restassured.RestAssured.given;
 
 public class GetReqPractice {
 
-//	@Test(description = "validation of md5 param value as test")
-//	public void md5_ParamTest() {
-//		
-//		String queryParamValue = "test";
-//		String expectedParamValue = "test";
-//		
-//		Response res = given().param("text", queryParamValue).
-//				when().get("http://md5.jsontest.com");
-//		
-//		String actualmd5 = res.getBody().path("original");
-//		System.out.println("actual value of md5 is  :"+ actualmd5);
-//		assertEquals(res.getStatusCode(), 200);
-//		System.out.println("response status code is  :"+ res.getStatusCode());
-//		assertEquals(expectedParamValue, actualmd5);
-//		System.out.println("actual and expected are same - Test case pass ");
-//		
-//	}
+	@Test(description = "validation of md5 param value as test")
+	public void md5_ParamTest() {
+		
+		String queryParamValue = "test";
+		String expectedParamValue = "test";
+		
+		Response res = given().param("text", queryParamValue).
+				when().get("http://md5.jsontest.com");
+		
+		String actualmd5 = res.getBody().path("original");
+		System.out.println("actual value of md5 is  :"+ actualmd5);
+		assertEquals(res.getStatusCode(), 200);
+		System.out.println("response status code is  :"+ res.getStatusCode());
+		assertEquals(expectedParamValue, actualmd5);
+		System.out.println("actual and expected are same - Test case pass ");
+		
+	}
 	
 //	@Test(description = "Validation of circuit count for year_2017")
 //	public void validateCircuitCount_2017() {
