@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -31,18 +32,20 @@ public class BaseClass {
 	@BeforeSuite
 	public void setUpSuite() {
 		
+		Reporter.log("Setting and test are getting ready");
 		excel = new ExcelDataProvider();
 		config = new ConfigDataProvider();
 		ExtentHtmlReporter htmlReport= new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Reports/OrangeHRM_"+ Helper.getCurrentDateTime()+".html"));
 		report = new ExtentReports();
 		report.attachReporter(htmlReport);
-//		logger.info("Excel, Config and Reports are initialized");
+		Reporter.log("Setting is done, test can be started");
 	}
 	
 	@BeforeClass
 	public void setUp() {
+		Reporter.log("Browser and url are getting started");
 		driver=BrowserFactory.startApplication(driver, config.getBrowser(), config.getQaUrl());
-//		 logger.info("Browser and app are up and running");
+		 Reporter.log("Browser and url are up and running");
 	}
 	
 	@AfterClass
