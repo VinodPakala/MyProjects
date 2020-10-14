@@ -21,7 +21,7 @@ public class LoginTestCRM extends BaseClass {
 			System.out.println("login is unsuccessful and the reason is:: "+ e.getMessage());
 		}
 		
-	   
+	   logger.info("Test Completed!");
 		
 	}
 }
